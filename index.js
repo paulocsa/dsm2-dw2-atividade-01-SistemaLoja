@@ -14,21 +14,21 @@ app.set('view engine', 'ejs');
 
 // chama a rota principal
 app.get("/",function(req, res){
-    res.render("index")
+    res.render("index");
 });
 
 // chama a rota clientes
-app.get("clientes",function(req, res){
+app.get("/clientes", function(req, res) {
     res.render("clientes");
 });
 
+
 // chama a rota produtos
-app.get("produtos",function(req, res){
+app.get("/produtos", function(req, res) {
     res.render("produtos");
 });
-
 // chama a rota pedidos
-app.get("pedidos",function(req, res){
+app.get("/pedidos",function(req, res){
     res.render("pedidos");
 });
 
@@ -36,10 +36,10 @@ app.get("pedidos",function(req, res){
 
 
 // iniciando o servidor
-app.listen(8080,function(erro){
+const server = app.listen(8080, function(erro){
     if(erro){
         console.log("Ocorreu um erro");
     }else{
-        console.log("O servidor foi iniciado")
+        console.log("O servidor foi iniciado em http://localhost:8080");
     }
 });
