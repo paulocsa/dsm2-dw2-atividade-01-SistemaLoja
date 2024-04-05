@@ -1,0 +1,17 @@
+{
+  "name": "dsm2-dw2-atividade-01-sistemaloja",
+  "version": "1.0.0",
+  "description": "Atividade de criação de aplicação com NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Paulo Candiani",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2"
+  }
+}
