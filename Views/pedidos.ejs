@@ -4,7 +4,7 @@
 <section style="height: 100vh">
   <br><br><br><br>
   <div class="container">
-    <table class="table">
+    <table class="table table-striped table-bordered">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Número do pedido</th>
@@ -12,18 +12,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>@twitter</td>
-        </tr>
+        <% pedidos.forEach(function(pedido){ %>
+          <tr>
+            <th scope="row"> 
+              <%= pedido.codigo %>
+            </th>
+            <td>
+              <%= pedido.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %>
+            </td>
+          </tr>
+        <% }) %>
       </tbody>
     </table>
   </div>
