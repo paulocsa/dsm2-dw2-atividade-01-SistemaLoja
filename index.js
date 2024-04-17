@@ -1,8 +1,10 @@
 // importando o express
-const express = require("express"); 
+const express = require("express");
 
 // iniciando o express
 const app = express();
+
+
 
 // define a pasta public para uso global
 app.use(express.static('public'));
@@ -10,8 +12,18 @@ app.use(express.static('public'));
 // indica ao express que deve ser renderizado as páginas em EJS
 app.set('view engine', 'ejs');
 
+
+// import ClientesController from "./Controllers/ClientesController.js";
+// import ProdutosController from "./Controllers/ProdutosController.js";
+// import PedidosController from "./Controllers/PedidosController.js"; 
+
+// // Definindo o uso das rotas dos Controllers
+// app.use("/", ClientesController);
+// app.use("/", PedidosController);
+// app.use("/", ProdutosController);
+
 // chama a rota clientes
-app.get("/clientes", function(req, res) {
+app.get("/clientes", function (req, res) {
     // Array de clientes
     var clientes = [
         {
@@ -65,7 +77,7 @@ app.get("/clientes", function(req, res) {
 });
 
 // chama a rota produtos
-app.get("/produtos", function(req, res) {
+app.get("/produtos", function (req, res) {
     // Array de produtos
     var produtos = [
         {
@@ -107,26 +119,25 @@ app.get("/produtos", function(req, res) {
 });
 
 // chama a rota pedidos
-app.get("/pedidos", function(req, res) {
+app.get("/pedidos", function (req, res) {
     // Array de pedidos
     var pedidos = [
         {
             codigo: 1,
             valor: 2.99
-        }, 
+        },
         {
             codigo: 2,
             valor: 6.99
-        }, 
+        },
         {
             codigo: 3,
             valor: 7.99
-        }, 
+        },
         {
             codigo: 4,
             valor: 10.99
         },
-        // Adicione mais objetos aqui conforme necessário
         {
             codigo: 5,
             valor: 5.50
@@ -144,14 +155,14 @@ app.get("/pedidos", function(req, res) {
 });
 
 // chama a rota principal
-app.get("/", function(req, res) {
-   
+app.get("/", function (req, res) {
+
     res.render("index");
 });
 
 // iniciando o servidor
-const server = app.listen(8080, function(erro) {
-    if(erro) {
+const server = app.listen(8080, function (erro) {
+    if (erro) {
         console.log("Ocorreu um erro");
     } else {
         console.log("O servidor foi iniciado em http://localhost:8080");
